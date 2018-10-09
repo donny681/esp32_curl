@@ -627,7 +627,7 @@ void testCurl(void *taskData) {
 
 	curl_info();
 
-	int nwait = 12;
+	int nwait = 2;
     printf("\r\n");
     while (nwait > 0) {
     	printf("Starting in %d seconds...   \r", nwait);
@@ -661,20 +661,20 @@ void testCurl(void *taskData) {
 #ifdef USE_GSM
 		if (ppposStatus() == GSM_STATE_CONNECTED) {
 #endif
-		testGET();
-		if (num_errors > 5) break;
-
-		testGET_SSL();
-		if (num_errors > 5) break;
-
-		testPOST();
-		if (num_errors > 5) break;
-
-		testFTP();
-		if (num_errors > 5) break;
-
-		testSFTP();
-		if (num_errors > 5) break;
+//		testGET();
+//		if (num_errors > 5) break;
+//
+//		testGET_SSL();
+//		if (num_errors > 5) break;
+//
+//		testPOST();
+//		if (num_errors > 5) break;
+//
+//		testFTP();
+//		if (num_errors > 5) break;
+//
+//		testSFTP();
+//		if (num_errors > 5) break;
 
 		testSMTP(sendmail);
 		if (num_errors > 5) break;
@@ -703,7 +703,7 @@ void testCurl(void *taskData) {
 			if (doPPPoS_Connect() == 1) break;
 	    }
 #else
-	    int nwait = 60;
+	    int nwait = 5;
 	    printf("\r\n");
 	    while (nwait > 0) {
 	    	printf("Waiting %d seconds...   \r", nwait);

@@ -399,7 +399,7 @@ static void state(struct connectdata *conn, sshstate nowstate)
 
 // ==== LoBo ===============================================
 
-int access (const char *file, int type)
+int curl_access (const char *file, int type)
 {
 struct stat stbuf;
 gid_t gid;
